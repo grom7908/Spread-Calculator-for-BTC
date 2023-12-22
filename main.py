@@ -18,4 +18,4 @@ find_accept1.click()
 find_btc_1 = driver.find_element(
     By.XPATH, "/html/body/div[3]/div/main/div[1]/div/div/div[2]/div[1]/div/div/a[1]/div[2]/div/div")
 find_btc_1 = find_btc_1.get_attribute('innerHTML')
-print("BTC price is " + find_btc_1)
+print("BTC current price is " + find_btc_1)
