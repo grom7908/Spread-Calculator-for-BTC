@@ -21,7 +21,7 @@ def get_crypto_price(url, accept_locator, price_locator):
         match = re.search(r'\d[\d.,]*', crypto_price_str)
         numeric_price = match.group() if match else None
 
-        print(f"Cryptocurrency price is {numeric_price}$")
+        print(f"BTC price is {numeric_price}$")
 
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -43,6 +43,6 @@ url_okx = "https://www.okx.com"
 accept_locator_okx = (By.ID, "onetrust-accept-btn-handler")
 price_locator_okx = (By.CSS_SELECTOR, "a.ticker-item")
 
-get_crypto_price(url_binance, accept_locator_binance, price_locator_binance)
-get_crypto_price(url_bybit, None, price_locator_bybit)
-get_crypto_price(url_okx, accept_locator_okx, price_locator_okx)
+# get_crypto_price(url_binance, accept_locator_binance, price_locator_binance)
+# get_crypto_price(url_bybit, None, price_locator_bybit)
+# get_crypto_price(url_okx, accept_locator_okx, price_locator_okx)
