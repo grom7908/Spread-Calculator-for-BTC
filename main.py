@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
+import re
 
 
 def get_crypto_price(url, accept_locator, price_locator):
@@ -15,9 +16,12 @@ def get_crypto_price(url, accept_locator, price_locator):
             find_accept.click()
 
         find_price = driver.find_element(*price_locator)
-        crypto_price = find_price.get_attribute('innerHTML')
+        crypto_price_str = find_price.text.strip()
 
-        print(f"Cryptocurrency price is {crypto_price}")
+        match = re.search(r'\d[\d.,]*', crypto_price_str)
+        numeric_price = match.group() if match else None
+
+        print(f"Cryptocurrency price is {numeric_price}$")
 
     except Exception as e:
         print(f"An error occurred: {e}")
