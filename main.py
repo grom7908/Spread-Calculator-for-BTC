@@ -43,6 +43,7 @@ url_okx = "https://www.okx.com"
 accept_locator_okx = (By.ID, "onetrust-accept-btn-handler")
 price_locator_okx = (By.CSS_SELECTOR, "a.ticker-item")
 
+
 # get_crypto_price(url_binance, accept_locator_binance, price_locator_binance)
 # get_crypto_price(url_bybit, None, price_locator_bybit)
 # get_crypto_price(url_okx, accept_locator_okx, price_locator_okx)
