@@ -4,7 +4,7 @@ import time
 import re
 
 
-def get_crypto_price(url, accept_locator, price_locator):
+def get_crypto_price(url, accept_locator, price_locator, output_label):
     driver = webdriver.Chrome()
 
     try:
@@ -21,10 +21,10 @@ def get_crypto_price(url, accept_locator, price_locator):
         match = re.search(r'\d[\d.,]*', crypto_price_str)
         numeric_price = match.group() if match else None
 
-        print(f"BTC price is {numeric_price}$")
+        output_label.config(text=f"BTC price is {numeric_price}$")
 
     except Exception as e:
-        print(f"An error occurred: {e}")
+        output_label.config(text=f"An error occurred: {e}")
 
     finally:
         driver.quit()
