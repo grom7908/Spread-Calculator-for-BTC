@@ -25,18 +25,18 @@ def btn_okx_click():
 
 def btn_binance_bybit_click(): #defining functions that stand for clicking buttons to check spread between exchanges
     try:
-        binance_price_str = binance_label.cget("text")
-        bybit_price_str = bybit_label.cget("text")
+        binance_price_str = binance_label.cget("text") #get the text content of the binance label
+        bybit_price_str = bybit_label.cget("text") #get the text content of the bybit label
 
-        binance_price = float(re.search(r'\d[\d.,]*', binance_price_str).group().replace(',', ''))
-        bybit_price = float(re.search(r'\d[\d.,]*', bybit_price_str).group().replace(',', ''))
+        binance_price = float(re.search(r'\d[\d.,]*', binance_price_str).group().replace(',', '')) #extract and convert the numeric value from the Binance label text
+        bybit_price = float(re.search(r'\d[\d.,]*', bybit_price_str).group().replace(',', '')) #the same with bybit
 
-        spread = binance_price - bybit_price
+        spread = binance_price - bybit_price #substract one from another
 
-        spread_label_binance_bybit.config(text=f"Spread: {spread:.2f}$")
+        spread_label_binance_bybit.config(text=f"Spread: {spread:.2f}$") #update the label with the calculated spread
 
     except Exception as e:
-        spread_label_binance_bybit.config(text=f"An error occurred: {e}")
+        spread_label_binance_bybit.config(text=f"An error occurred: {e}") #handle exceptions by updating the label with an error message
 
 
 def btn_bybit_okx_click():
