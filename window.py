@@ -16,7 +16,7 @@ def btn_binance_click(): #defining functions that stand for clicking the buttons
 
 
 def btn_bybit_click():
-    get_crypto_price(url_bybit, None, price_locator_bybit, bybit_label)
+    get_crypto_price(url_bybit, None, price_locator_bybit, bybit_label) #none because there is no button "accept cookies"
 
 
 def btn_okx_click():
