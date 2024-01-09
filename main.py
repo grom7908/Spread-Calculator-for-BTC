@@ -24,7 +24,7 @@ def get_crypto_price(url, accept_locator, price_locator, output_label): #definin
         output_label.config(text=f"BTC price is {numeric_price}$") #output
 
     except Exception as e:
-        output_label.config(text=f"An error occurred: {e}") #output is an error exists
+        output_label.config(text=f"An error occurred: {e}") #output if an error exists
 
     finally:
         driver.quit() #quits the driver
